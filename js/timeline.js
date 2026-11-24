@@ -1,0 +1,2 @@
+import {availableYears,update} from './state.js';
+export function renderTimeline(s){const el=document.querySelector('#timeline');el.replaceChildren();for(let y=2026;y>=1900;y--){const b=document.createElement('button');b.textContent=y;b.disabled=!availableYears().includes(y);b.classList.toggle('active',y===s.year);b.setAttribute('aria-pressed',String(y===s.year));b.title=b.disabled?'Not included in this starter dataset':'Select year';b.onclick=()=>update({year:y});el.append(b)}}
