@@ -1,2 +1,0 @@
-import {update} from './state.js';
-export function initSearch(){document.querySelector('#search').addEventListener('submit',e=>{e.preventDefault();const q=document.querySelector('#query');const term=q.value.trim().toLowerCase();if(term.includes('aletsch'))update({location:'Grosser Aletschgletscher'});else if(term==='switzerland')update({location:'Switzerland'});else{q.setCustomValidity('Demo search supports Switzerland and Aletsch.');q.reportValidity();q.setCustomValidity('')}})}
